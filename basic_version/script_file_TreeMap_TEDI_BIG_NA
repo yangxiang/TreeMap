@@ -1,0 +1,18 @@
+#PBS -N TreeMapTest_TEDI_BIG_NA
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=96:00:00
+#PBS -l pvmem=4GB
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+ ./bin/TreeMapF -g 2 -l 1 -q ./queryfile/BIG_NA.queryfile ./datasets/TEDI/BIG_NA.gra
+#
+
+#
+ ./bin/TreeMapC -g 2 -l 0 -q ./queryfile/BIG_NA.queryfile ./datasets/TEDI/BIG_NA.gra
+#

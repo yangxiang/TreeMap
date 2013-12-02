@@ -1,0 +1,17 @@
+#PBS -N TreeMapTest_VeryLarge_cit-Patents_DLS
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=96:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+ ./bin/TreeMapF -g 4 -d 1 -l 1 -q ./queryfile/cit-Patents.queryfile -b 1000 -c 0.8 ./datasets/VeryLarge/cit-Patents.txt
+#
+
+#
+ ./bin/TreeMapC -g 4 -d 1 -l 0 -q ./queryfile/cit-Patents.queryfile -b 1000 -c 0.8 ./datasets/VeryLarge/cit-Patents.txt
+#

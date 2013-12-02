@@ -1,0 +1,17 @@
+#PBS -N TreeMapTest_HighwayCentric_citeseer
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=96:00:00
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+ ./bin/TreeMapF -d 1 -l 1 -q ./queryfile/citeseer.queryfile ./datasets/HighwayCentric/citeseer.gra
+#
+
+#
+ ./bin/TreeMapC -d 1 -l 0 -q ./queryfile/citeseer.queryfile ./datasets/HighwayCentric/citeseer.gra
+#

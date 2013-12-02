@@ -1,0 +1,19 @@
+#PBS -N TreeMapTest_HighwayCentric_p2p09
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=96:00:00
+#PBS -l pvmem=4GB
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+ ./bin/TreeMapF -d 1 -l 1 -q ./queryfile/p2p09.queryfile ./datasets/HighwayCentric/p2p09.gra
+#
+
+#
+ ./bin/TreeMapC -d 1 -l 0 -q ./queryfile/p2p09.queryfile ./datasets/HighwayCentric/p2p09.gra
+#
+

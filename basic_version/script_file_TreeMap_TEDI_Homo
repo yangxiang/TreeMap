@@ -1,0 +1,18 @@
+#PBS -N TreeMapTest_TEDI_Homo
+#PBS -j oe
+#PBS -l nodes=1:ppn=8
+#PBS -l walltime=96:00:00
+#PBS -l pvmem=4GB
+#PBS -S /bin/ksh
+
+set -x
+
+cd $PBS_O_WORKDIR
+
+#
+ ./bin/TreeMapF -g 3 -l 1 -q ./queryfile/Homo.queryfile ./datasets/TEDI/Homo.pjk
+#
+
+#
+ ./bin/TreeMapC -g 3 -l 0 -q ./queryfile/Homo.queryfile ./datasets/TEDI/Homo.pjk
+#
